@@ -1,5 +1,5 @@
 // AVL.H - A AVL Tree (Self-Balancing BST)
-// author Darcy Lyndon Cukrov Wilson
+// author Darcy Wilson
 
 #ifndef AVL_H
 #define AVL_H
@@ -13,9 +13,9 @@ using std::endl; //Allows for the usage of std::endl without needing std:: at th
 * @class AVL
 * @brief Creates a Templated AVL (Self-Balancing Binary Search Tree)
 *
-* @author Darcy Lyndon Cukrov Wilson
+* @author Darcy Wilson
 * @version 01
-* @date 01/06/2022 Darcy Lyndon Cukrov Wilson
+* @date 01/06/2022 Wilson
 */
 
 //TEMPLATE CLASSES SOMETIMES HAVE THE DECLARATIONS & IMPLEMENTATIONS WITHIN THE HEADER FILE
@@ -103,139 +103,20 @@ public:
         * @param  const T& inputBST - Element to be input into the AVL
         */
     void operator=(const T& inputBST);
-private: //Usually Doxygen comments are NOT added for private variables, but for the sake of learning, they are here
-        /**
-        * @brief Copy AVL Function
-        *
-        * Called from the Copy Constructor, used to copy the elements from one AVL tree to the other
-        *
-        * @return void
-        *
-        * @param  Node* &nodeCopy - The AVL to be copied to
-        * @param  Node* &inputNode - The AVL to be copied from
-        */
+private:
     void CopyAVL(Node* &nodeCopy, Node *&inputNode);
-        /**
-        * @brief Maximum of Two Integers
-        *
-        * Used to find the maximum of two input integers
-        *
-        * @return int
-        *
-        * @param  int a - Integer to be compared against
-        * @param  int b - Integer to be compared against
-        */
     int MaxInteger(int a, int b);
-        /**
-        * @brief Get Current Node Height
-        *
-        * Used to return a node's current height
-        *
-        * @return Nint
-        *
-        * @param  Node* &inputRoot - Node who is to be used to return a height value
-        */
     int GetNodeHeight(Node *&inputNode);
-        /**
-        * @brief Right Rotation of Node
-        *
-        * Used to perform a right rotation on a node
-        *
-        * @return Node*
-        *
-        * @param  Node* &inputRoot - Node who is to be used to perform the rotation
-        */
     Node* RightRotate(Node *&inputNode);
-        /**
-        * @brief Left Rotation of Node
-        *
-        * Used to perform a left rotation on a node
-        *
-        * @return Node*
-        *
-        * @param  Node* &inputRoot - Node who is to be used to perform the rotation
-        */
     Node* LeftRotate(Node *&inputNode);
-        /**
-        * @brief Get Balance Factor
-        *
-        * Used to find the height of a given input node
-        *
-        * @return int
-        *
-        * @param  Node* &inputRoot - Node whose height is to be checked
-        */
     int GetBalanceFactor(Node *&inputNode);
-        /**
-        * @brief Insert Element Function (PRIVATE)
-        *
-        * Used to recursively loop through elements, add them to the AVL and balance them
-        *
-        * @return void
-        *
-        * @param  const int inputValue - Element to be input into the tree
-        * @param  Node* &inputRoot - Node to be added to
-        */
     Node* Insert(const T& inputValue, Node *&inputRoot);
-        /**
-        * @brief Search Tree Function
-        *
-        * Takes an input element from the user and checks to see if it is within the AVL
-        *
-        * @return void
-        *
-        * @param  const T searchElement - Element to be searched for in the AVL
-        * @param  bool dataFound - A boolean to tell whether the data has been found or not
-        * @param  void (*functionPointer) (const  T& element) - A pointer to a function
-        * @param  Node* &inputNode - The node to be searched from
-        */
     void SearchTree(const T& searchElement, bool &dataFound, void (*functionPointer) (const T& element), Node *&inputNode);
-        /**
-        * @brief In Order Traversal (PRIVATE)
-        *
-        * Used to recursively loop through elements and print them out
-        *
-        * @return void
-        *
-        * @param  const Node* inputRoot - Tree to be printed from
-        * @param  void (*functionPointer) (const  T& element) - A pointer to a function
-        */
     void InOrderTraversal(const Node *inputRoot, void (*functionPointer) (const  T& element)) const;
-        /**
-        * @brief Pre Order Traversal (PRIVATE)
-        *
-        * Used to recursively loop through elements and print them out
-        *
-        * @return void
-        *
-        * @param  const Node* inputRoot - Tree to be printed from
-        * @param  void (*functionPointer) (const  T& element) - A pointer to a function
-        */
     void PreOrderTraversal(const Node *inputRoot, void (*functionPointer) (const  T& element)) const;
-        /**
-        * @brief Post Order Traversal (PRIVATE)
-        *
-        * Used to recursively loop through elements and print them out
-        *
-        * @return void
-        *
-        * @param  const Node* inputRoot - Tree to be printed from
-        * @param  void (*functionPointer) (const  T& element) - A pointer to a function
-        */
     void PostOrderTraversal(const Node *inputRoot, void (*functionPointer) (const  T& element)) const;
-        /**
-        * @brief Delete Tree Function
-        *
-        * Accessed by the destructor, used to delete the AVL and free it's memory
-        *
-        * @return void
-        *
-        * @param  Node* &inputNode - Tree to be deleted
-        */
     void DeleteTree(Node *&inputRoot);
-        /**
-        * @param  Node* root - The root node of the AVL
-        */
+
     Node* root;
 };
 
