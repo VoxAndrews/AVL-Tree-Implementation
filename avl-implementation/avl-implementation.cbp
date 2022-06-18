@@ -56,17 +56,6 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="AVL.H" />
-		<Unit filename="BST.h" />
-		<Unit filename="COLLECTDATA.CPP" />
-		<Unit filename="COLLECTDATA.H" />
-		<Unit filename="CUSTOMDATA.H" />
-		<Unit filename="DATE.CPP" />
-		<Unit filename="DATE.H" />
-		<Unit filename="FILEHANDLER.CPP" />
-		<Unit filename="FILEHANDLER.H" />
-		<Unit filename="TIME.CPP" />
-		<Unit filename="TIME.H" />
-		<Unit filename="VECTOR.H" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
